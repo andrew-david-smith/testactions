@@ -1,0 +1,22 @@
+name: 'Merge to deploy'
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  merge-command:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Merge master into deploy
+      uses: FlexMR/gh-actions-merge-deploy@feature/BLOB-1207_set_up_automatic_merging
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SOURCE_BRANCH: source_branch
+        DESTINATION_BRANCH: main
+        COMMIT_NAME: Andy
+        COMMIT_EMAIL: thranriel@gmail.com
