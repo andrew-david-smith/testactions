@@ -2,7 +2,7 @@ name: 'Merge to deploy'
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '30 * * * *'
 
 jobs:
   merge-command:
