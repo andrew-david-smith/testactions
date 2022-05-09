@@ -2,7 +2,7 @@ name: 'Merge to deploy'
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   merge-command:
@@ -20,3 +20,5 @@ jobs:
         DESTINATION_BRANCH: main
         COMMIT_NAME: Andy
         COMMIT_EMAIL: thranriel@gmail.com
+        SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
+        SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
